@@ -30,8 +30,8 @@ public class NoteController {
         return repository.updateNote(note);
     }
 
-    public List<Note> deleteNote(String noteId) throws Exception {
-        return repository.deleteNote(noteId);
+    public void deleteNote(String noteId) throws Exception {
+        repository.deleteNote(noteId);
     }
 
     private void validateNote(Note note) throws Exception {

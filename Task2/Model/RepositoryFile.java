@@ -73,16 +73,10 @@ public class RepositoryFile implements Repository {
     }
 
     @Override
-    public List<Note> deleteNote(String noteId) throws Exception {
+    public void deleteNote(String noteId) throws Exception {
         List<Note> notes = getAllNotes();
-        List<Note> newNotes = new ArrayList<>();
         Note foundNote = findNotebyId(notes, noteId);
-        for (Note note : notes) {
-            if (note.equals(foundNote))
-                continue;
-            newNotes.add(note);
-        }
-        saveNotes(newNotes);
-        return newNotes;
+        notes.remove(foundNote);
+        saveNotes(notes);
     }
 }

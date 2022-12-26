@@ -7,7 +7,7 @@ public interface Repository {
     String createNote(Note note);
     Note updateNote(Note note) throws Exception;
     Note readNote(String noteId) throws Exception;
-    List<Note> deleteNote(String noteId) throws Exception;
+    void deleteNote(String noteId) throws Exception;
 
 
 }
